@@ -290,15 +290,23 @@ export function CustomizingSim() {
         )}
       </div>
 
-      {/* Lernhinweise */}
+      {/* Lernhinweise SPRO */}
       <div className="md:col-span-2 mt-6 p-4 bg-blue-50 rounded">
-        <h4 className="font-bold">🎓 Lernhinweise:</h4>
+        <h4 className="font-bold">🎓 Lernhinweise (SPRO & Customizing):</h4>
         <ul className="list-disc list-inside space-y-2 text-sm">
-          <li>SPRO (SAP Project Reference Object) ist das zentrale Werkzeug für IS-U Customizing</li>
-          <li>Änderungen können weitreichende Auswirkungen auf verschiedene Bereiche haben</li>
-          <li>Die Spartensteuerung ist eine grundlegende Einstellung, die viele andere Bereiche beeinflusst</li>
-          <li>Manche Einstellungen können im produktiven System nicht mehr geändert werden</li>
-          <li>Es ist wichtig, die Auswirkungen von Customizing-Änderungen zu verstehen und zu dokumentieren</li>
+          <li>SPRO ist die Transaktion, mit der Administratoren und Berater das SAP-System konfigurieren. Es ist der zentrale Einstiegspunkt für alle Customizing-Aktivitäten. Die Haupttransaktion hierfür ist `SPRO`.</li>
+          <li>Änderungen im Customizing haben oft weitreichende Auswirkungen auf das Systemverhalten. Es ist wichtig, die Zusammenhänge zu verstehen.</li>
+          <li>Customizing-Einstellungen werden in der Regel in Entwicklungssystemen vorgenommen und dann über Transportaufträge (Transaktionen `SE09`, `SE10`) in Test- und Produktivsysteme (`STMS`) übertragen.</li>
+          <li>Die Mandantenverwaltung (`SCC4`) legt fest, ob und wie Änderungen in einem Mandanten erlaubt sind.</li>
+          <li>Berechtigungen für Customizing-Aktivitäten und den Zugriff auf Transaktionen werden über Rollen in der `PFCG` gesteuert.</li>
+          <li>Viele Einstellungen, die hier simuliert werden (z.B. Spartensteuerung, Abrechnungszyklen), sind tief im SPRO-Pfad unter <i>SAP Utilities</i> zu finden. Beispielpfade könnten sein:
+            <ul className="list-disc list-inside pl-4">
+              <li><i>SAP Customizing Einführungsleitfaden - SAP Utilities - Grundeinstellungen - ...</i></li>
+              <li><i>SAP Customizing Einführungsleitfaden - SAP Utilities - Geräteverwaltung - ...</i></li>
+              <li><i>SAP Customizing Einführungsleitfaden - SAP Utilities - Vertragsabrechnung - ...</i></li>
+            </ul>
+          </li>
+          <li>Es ist entscheidend, die Auswirkungen von Customizing-Änderungen sorgfältig zu testen und zu dokumentieren, bevor sie in produktive Umgebungen übernommen werden.</li>
         </ul>
       </div>
     </div>

@@ -131,14 +131,16 @@ export function DeviceManagementSim() {
       )}
 
       <div className="mt-6 p-4 bg-blue-50 rounded">
-        <h4 className="font-bold">🎓 Lernhinweise:</h4>
-        <ul className="list-disc list-inside space-y-2 text-sm">
-          <li>Ein Zähler kann verschiedene Status haben: AKTIV, AUSGEBAUT oder DEFEKT</li>
-          <li>Neue Zählerstände müssen immer höher sein als der letzte erfasste Stand</li>
-          <li>Die Zählernummer (hier: {devices[0].id}) ist im IS-U ein wichtiges Merkmal zur Identifikation</li>
-          <li>Der technische Platz (hier: {devices[0].location}) gibt den Einbauort des Zählers an</li>
-        </ul>
-      </div>
+          <h4 className="font-bold">🎓 Lernhinweise:</h4>
+          <ul className="list-disc list-inside space-y-2 text-sm">
+            <li>Ein Zähler kann verschiedene Status haben: AKTIV, AUSGEBAUT oder DEFEKT (Transaktion: `IQ02`/`IQ03` - Geräte anzeigen/ändern)</li>
+            <li>Neue Zählerstände müssen immer höher sein als der letzte erfasste Stand (Transaktion: `EL28` - Ableseerfassung)</li>
+            <li>Die Zählernummer (hier: {devices[0].id}) ist im IS-U ein wichtiges Merkmal zur Identifikation.</li>
+            <li>Der technische Platz (hier: {devices[0].location}) gibt den Einbauort des Zählers an (Transaktion: `IL03` - Technischen Platz anzeigen).</li>
+            <li>Wichtige SAP-Transaktionen (Geräteverwaltung): `EG30` (Einbau), `EG31` (Ausbau), `EG32` (Wechsel), `IQ01` (Anlegen), `IQ08` (Suchen), `EL01` (Ableseeinheit), `EL18` (Ableseaufträge).</li>
+            <li>Customizing-Pfade (SPRO, beispielhaft): SAP Utilities - Geräteverwaltung - Stammdaten / Einbau/Ausbau/Wechsel.</li>
+          </ul>
+        </div>
     </div>
   );
 }

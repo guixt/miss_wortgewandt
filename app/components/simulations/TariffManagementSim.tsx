@@ -257,14 +257,15 @@ export function TariffManagementSim() {
       </div>
 
       <div className="mt-6 p-4 bg-blue-50 rounded">
-        <h4 className="font-bold">🎓 Lernhinweise:</h4>
-        <ul className="list-disc list-inside space-y-2 text-sm">
-          <li>In IS-U gibt es verschiedene Tarifarten: Verbrauchspreise, Grundpreise und Staffelpreise</li>
-          <li>Jeder Tarif hat einen Gültigkeitszeitraum</li>
-          <li>Staffelpreise ermöglichen unterschiedliche Preise je nach Verbrauchsmenge</li>
-          <li>Die Preisfindung berücksichtigt alle aktiven Tarife und berechnet den Gesamtpreis</li>
-        </ul>
-      </div>
+          <h4 className="font-bold">🎓 Lernhinweise:</h4>
+          <ul className="list-disc list-inside space-y-2 text-sm">
+            <li>Tarife in IS-U können sehr komplex sein und verschiedene Preisbestandteile haben (z.B. Arbeitspreis, Grundpreis, Leistungspreis).</li>
+            <li>Die Preisfindung erfolgt über Schemata und Tarifkonditionen (Transaktion: `EA89` - Preissimulation).</li>
+            <li>Staffelpreise ändern sich je nach Verbrauchsmenge.</li>
+            <li>Wichtige SAP-Transaktionen (Tarife & Preise): `EA30` (Tarifart anlegen), `EA31` (Tarifart ändern), `EA32` (Tarifart anzeigen), `EA88` (Tarife anzeigen), `EA90` (Preise anzeigen).</li>
+            <li>Customizing-Pfade (SPRO, beispielhaft): SAP Utilities - Vertragsabrechnung - Tarifierung / Preisfindung.</li>
+          </ul>
+        </div>
     </div>
   );
 }
