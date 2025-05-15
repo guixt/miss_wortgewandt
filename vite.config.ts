@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: '/miss_wortgewandt/', // Korrekter Pfad für GitHub Pages
+  base: './', // Use relative path for GitHub Pages
   build: {
     outDir: 'dist',
     emptyOutDir: true,

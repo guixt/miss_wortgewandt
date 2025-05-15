@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build --base=/miss_wortgewandt/",
+    "build": "vite build --base=./",
     "dev": "vite dev",
     "preview": "vite preview",
     "typecheck": "tsc"
