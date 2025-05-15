@@ -2,18 +2,21 @@ import { Link, useLocation } from "react-router";
 
 export function Navigation() {
   const location = useLocation();
-  
+
   const isActive = (path: string) => location.pathname === path;
 
+  // Styles werden jetzt über app.css geregelt (siehe nav und nav-link)
   return (
-    <nav className="bg-blue-600 text-white p-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold">IS-U Navigator</Link>
+    <nav>
+      <div className="container mx-auto flex items-center justify-between py-4">
+        <Link to="/" className="text-2xl font-extrabold tracking-tight" style={{ letterSpacing: '0.03em' }}>
+          Miss Wortgewandt
+        </Link>
         <ul className="flex space-x-6">
           <li>
             <Link 
               to="/" 
-              className={`hover:text-blue-200 ${isActive('/') ? 'font-bold' : ''}`}
+              className={`nav-link ${isActive('/') ? 'active' : ''}`}
             >
               Home
             </Link>
@@ -21,9 +24,9 @@ export function Navigation() {
           <li>
             <Link 
               to="/modules" 
-              className={`hover:text-blue-200 ${isActive('/modules') ? 'font-bold' : ''}`}
+              className={`nav-link ${isActive('/modules') ? 'active' : ''}`}
             >
-              Module
+              Planungs-Module
             </Link>
           </li>
         </ul>
