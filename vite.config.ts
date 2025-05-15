@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: '/', // Wichtig für korrektes Routing
+  base: '/miss_wortgewandt/', // Wichtig für GitHub Pages Routing
   build: {
     outDir: 'build/client',
     emptyOutDir: true,
