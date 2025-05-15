@@ -5,7 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+} from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 
 import type { Route } from "./+types/root";

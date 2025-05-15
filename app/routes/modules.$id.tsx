@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import modules from "../data/modules";
 import Rituale from "../components/planung/Rituale";
 import Ablauf from "../components/planung/Ablauf";

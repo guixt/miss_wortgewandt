@@ -4,5 +4,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: '/', // Wichtig für korrektes Routing
+  build: {
+    outDir: 'build/client',
+    emptyOutDir: true,
+  },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
 });
