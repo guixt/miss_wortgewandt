@@ -4,10 +4,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: './', // Use relative path for GitHub Pages
+  base: '/', // Correct base path for routing
+  plugins: [react(), tailwindcss(), tsconfigPaths()],
   build: {
-    outDir: 'dist',
+    outDir: 'build/client', // Consistent build output path
     emptyOutDir: true,
   },
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
 });
