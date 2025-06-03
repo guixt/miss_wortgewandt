@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface Gast {
   name: string;
@@ -8,8 +9,11 @@ interface Gast {
 }
 
 export default function Gaeste() {
-  const [gaeste, setGaeste] = useState<Gast[]>([]);
-  const [tische, setTische] = useState<string[]>(["Tisch 1", "Tisch 2"]);
+  const [gaeste, setGaeste] = useLocalStorage<Gast[]>("gaeste_liste", []);
+  const [tische, setTische] = useLocalStorage<string[]>(
+    "gaeste_tische",
+    ["Tisch 1", "Tisch 2"]
+  );
   const [neuGast, setNeuGast] = useState<Gast>({ name: "", seite: "Beide", besonderheiten: "", tisch: tische[0] });
   const [neuTisch, setNeuTisch] = useState("");
 
