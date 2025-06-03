@@ -1,87 +1,48 @@
-# Welcome to React Router!
+# Miss Wortgewandt – Dein digitaler Hochzeitsplaner
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Eine Hochzeit ist eines der schönsten Feste im Leben – doch damit dieser besondere Tag unvergesslich wird, bedarf es guter Planung. **Miss Wortgewandt** unterstützt euch dabei, eure Feier mit Herz und Struktur vorzubereiten. Die App vereint praktische Werkzeuge und kreative Impulse, damit ihr entspannt auf den großen Moment zusteuern könnt.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Warum planen so wichtig ist
 
-## Features
+Ob Gästeliste, Budget oder musikalische Begleitung – je früher ihr euch um die Details kümmert, desto mehr könnt ihr eurem Hochzeitstag entgegensehen. Mit einem durchdachten Ablauf vermeidet ihr Stress und könnt die Feier gemeinsam mit euren Liebsten genießen.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+### Allgemeine Tipps für die Planung
 
-## Getting Started
+1. **Zeitplan erstellen:** Beginnt frühzeitig mit der Organisation und legt feste Meilensteine fest.
+2. **Budget im Blick behalten:** Notiert alle Ausgaben und plant realistisch – kleine Puffer helfen bei unerwarteten Kosten.
+3. **Kommunikation ist alles:** Sprecht regelmäßig mit Dienstleistern, Trauzeugen und Familie, um alle auf dem gleichen Stand zu halten.
 
-### Installation
+## Funktionen der App
 
-Install the dependencies:
+Die Anwendung bietet euch übersichtliche Module, die ihr nach Bedarf nutzen könnt:
+
+- **Rituale:** Findet Inspiration für symbolische Handlungen und gestaltet sie nach euren Vorstellungen.
+- **Ablaufplanung:** Legt Programmpunkte mit Zeiten und Beteiligten fest, damit der Tag reibungslos verläuft.
+- **Reden & Beiträge:** Koordiniert Wortbeiträge, Musik und Überraschungen eurer Gäste.
+- **Gästeliste & Sitzordnung:** Behaltet alle Zusagen, Besonderheiten und Plätze im Blick.
+- **Musik & Stimmung:** Haltet Musikwünsche fest und plant Songs für die wichtigsten Momente.
+- **Checklisten & Aufgaben:** Organisiert To‑dos und Fälligkeiten, damit nichts vergessen wird.
+- **Budgetplanung:** Vergleicht geplante und tatsächliche Kosten und markiert bezahlte Rechnungen.
+- **Individuelle Wünsche:** Notiert persönliche Anliegen, die euren Tag einzigartig machen.
+
+## Installation und Entwicklung
 
 ```bash
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Nach dem Start steht euch die App unter `http://localhost:5173` zur Verfügung. Für den Produktivbetrieb erstellt ihr mit `npm run build` eine optimierte Version.
 
-## Building for Production
-
-Create a production build:
+## Deployment per Docker
 
 ```bash
-npm run build
+docker build -t hochzeitsplaner .
+docker run -p 3000:3000 hochzeitsplaner
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Natürlich könnt ihr den entstandenen Build auch auf jeder gängigen Hosting‑Plattform einsetzen.
 
 ---
 
-Built with ❤️ using React Router.
+Mit ♥ entwickelt für alle Paare, die ihren großen Tag entspannt und individuell planen möchten.
