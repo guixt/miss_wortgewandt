@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface Task {
   text: string;
@@ -8,7 +9,7 @@ interface Task {
   notiz: string;
 }
 
-const defaultKategorien = [
+const DEFAULT_KATEGORIEN = [
   "Vor der Hochzeit",
   "Zeremonie",
   "Feier",
@@ -17,15 +18,21 @@ const defaultKategorien = [
 ];
 
 export default function Checklisten() {
-  const [tasks, setTasks] = useState<Task[]>([
-    { text: "Location buchen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
-    { text: "DJ/Liveband anfragen", erledigt: false, kategorie: "Feier", faellig: "", notiz: "" },
-    { text: "Ringe besorgen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
-    { text: "Brautkleid aussuchen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
-    { text: "Danksagungen vorbereiten", erledigt: false, kategorie: "Nach der Hochzeit", faellig: "", notiz: "" },
-  ]);
-  const [neu, setNeu] = useState<Task>({ text: "", erledigt: false, kategorie: defaultKategorien[0], faellig: "", notiz: "" });
-  const [kategorien, setKategorien] = useState<string[]>(defaultKategorien);
+  const [tasks, setTasks] = useLocalStorage<Task[]>(
+    "check_tasks",
+    [
+      { text: "Location buchen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
+      { text: "DJ/Liveband anfragen", erledigt: false, kategorie: "Feier", faellig: "", notiz: "" },
+      { text: "Ringe besorgen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
+      { text: "Brautkleid aussuchen", erledigt: false, kategorie: "Vor der Hochzeit", faellig: "", notiz: "" },
+      { text: "Danksagungen vorbereiten", erledigt: false, kategorie: "Nach der Hochzeit", faellig: "", notiz: "" },
+    ]
+  );
+  const [neu, setNeu] = useState<Task>({ text: "", erledigt: false, kategorie: DEFAULT_KATEGORIEN[0], faellig: "", notiz: "" });
+  const [kategorien, setKategorien] = useLocalStorage<string[]>(
+    "check_kategorien",
+    DEFAULT_KATEGORIEN
+  );
   const [neueKategorie, setNeueKategorie] = useState("");
 
   const addTask = () => {
@@ -138,6 +145,16 @@ export default function Checklisten() {
           </tbody>
         </table>
       </div>
+      <button
+        className="btn"
+        type="button"
+        onClick={() => {
+          setTasks([]);
+          setKategorien(DEFAULT_KATEGORIEN);
+        }}
+      >
+        Liste zurücksetzen
+      </button>
     </div>
   );
 }
