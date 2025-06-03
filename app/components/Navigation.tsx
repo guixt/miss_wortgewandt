@@ -8,11 +8,11 @@ export function Navigation() {
   // Styles werden jetzt über app.css geregelt (siehe nav und nav-link)
   return (
     <nav>
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-4 gap-2">
         <Link to="/" className="text-2xl font-extrabold tracking-tight" style={{ letterSpacing: '0.03em' }}>
           Miss Wortgewandt
         </Link>
-        <ul className="flex space-x-6">
+        <ul className="flex flex-col sm:flex-row gap-2 sm:gap-6">
           <li>
             <Link 
               to="/" 

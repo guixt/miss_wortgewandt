@@ -10,10 +10,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-4 sm:p-6">
       <div className="w-full flex flex-col gap-8 lg:flex-row lg:gap-8 items-stretch justify-center">
         {/* Linke Spalte: Bild und Begrüßung */}
-        <div className="flex-1 flex flex-col gap-6 justify-between min-w-[340px] max-w-xl">
+        <div className="flex-1 flex flex-col gap-6 justify-between w-full max-w-xl">
           <div className="shadow-card bg-[#fff] rounded-2xl p-6 flex flex-col items-center justify-center h-full">
             <img
               src="/hochzeit.png"
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
 
         {/* Rechte Spalte: Features & Persönliche Note */}
-        <div className="flex-1 flex flex-col gap-6 min-w-[340px] max-w-xl">
+        <div className="flex-1 flex flex-col gap-6 w-full max-w-xl">
           <div className="shadow-card bg-[#f8f5f7] border border-[#eadfe6] rounded-2xl p-6 flex-1 flex flex-col justify-between">
             <h2 className="text-xl font-semibold mb-2 text-[#a26b95] flex items-center gap-2">
               <span className="inline-block w-6 h-6 bg-[#eadfe6] rounded-full flex items-center justify-center mr-1">✨</span>
@@ -56,8 +56,7 @@ export default function Home() {
           <div className="flex justify-center mt-4">
             <Link
               to="/modules"
-              className="btn px-8 py-3 text-lg font-semibold shadow-card"
-              style={{ background: 'var(--primary)', color: '#fff', minWidth: 240 }}
+              className="btn px-8 py-3 text-lg font-semibold shadow-card w-full sm:w-auto"
             >
               Zu den Planungsmodulen
             </Link>
