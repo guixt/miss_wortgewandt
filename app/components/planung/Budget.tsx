@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface BudgetPosten {
   kategorie: string;
@@ -8,14 +9,19 @@ interface BudgetPosten {
   notiz: string;
 }
 
+const DEFAULT_POSTEN: BudgetPosten[] = [
+  { kategorie: "Location", geplant: 3000, kosten: 0, bezahlt: false, notiz: "inkl. Essen/Trinken" },
+  { kategorie: "Musik/DJ", geplant: 800, kosten: 0, bezahlt: false, notiz: "" },
+  { kategorie: "Fotograf", geplant: 1200, kosten: 0, bezahlt: false, notiz: "" },
+  { kategorie: "Kleidung", geplant: 1500, kosten: 0, bezahlt: false, notiz: "Braut & Bräutigam" },
+  { kategorie: "Deko/Blumen", geplant: 600, kosten: 0, bezahlt: false, notiz: "" },
+];
+
 export default function Budget() {
-  const [posten, setPosten] = useState<BudgetPosten[]>([
-    { kategorie: "Location", geplant: 3000, kosten: 0, bezahlt: false, notiz: "inkl. Essen/Trinken" },
-    { kategorie: "Musik/DJ", geplant: 800, kosten: 0, bezahlt: false, notiz: "" },
-    { kategorie: "Fotograf", geplant: 1200, kosten: 0, bezahlt: false, notiz: "" },
-    { kategorie: "Kleidung", geplant: 1500, kosten: 0, bezahlt: false, notiz: "Braut & Bräutigam" },
-    { kategorie: "Deko/Blumen", geplant: 600, kosten: 0, bezahlt: false, notiz: "" },
-  ]);
+  const [posten, setPosten] = useLocalStorage<BudgetPosten[]>(
+    "budget_posten",
+    DEFAULT_POSTEN
+  );
   const [neu, setNeu] = useState<BudgetPosten>({ kategorie: "", geplant: 0, kosten: 0, bezahlt: false, notiz: "" });
 
   const addPosten = () => {
@@ -146,6 +152,13 @@ export default function Budget() {
           </tfoot>
         </table>
       </div>
+      <button
+        className="btn"
+        type="button"
+        onClick={() => setPosten(DEFAULT_POSTEN)}
+      >
+        Budget zurücksetzen
+      </button>
     </div>
   );
 }
